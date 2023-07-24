@@ -3,7 +3,7 @@
 import { cleanUser } from "@/libs/cleanUser";
 import { UserCard } from "@/components/UserCard";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RandomUserPage() {
   //user = null or array of object
@@ -21,10 +21,18 @@ export default function RandomUserPage() {
     //Your code here
     //Process result from api response with map function. Tips use function from /src/libs/cleanUser
     //Then update state with function : setUsers(...)
+    const user = users.map;
+
     const cleanedUser = cleanUser(users);
     setUser(cleanedUser);
   };
 
+  useEffect(() => {
+    if (!isLoading) {
+      setGenAmount(true);
+      return;
+    }
+  });
   return (
     <div style={{ maxWidth: "700px" }} className="mx-auto">
       <p className="display-4 text-center fst-italic m-4">Users Generator</p>
