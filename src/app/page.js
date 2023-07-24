@@ -29,8 +29,9 @@ export default function RandomUserPage() {
 
   useEffect(() => {
     if (!isLoading) {
-      setGenAmount(true);
+      setIsLoading(true);
       return;
+      localStorage.setItem();
     }
   });
   return (
